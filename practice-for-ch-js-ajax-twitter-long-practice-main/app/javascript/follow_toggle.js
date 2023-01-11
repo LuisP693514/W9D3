@@ -16,10 +16,12 @@ export default class FollowToggle {
 
     switch (followState) {
       case 'Follow!':
-          this.unfollow()
+        // debugger
+          this.follow()
         break;
       case 'Unfollow!':
-        this.follow();
+        // debugger
+        this.unfollow();
         break;
       default:
         console.log("error");
@@ -30,15 +32,28 @@ export default class FollowToggle {
 
   async follow() {
     // Your code here
+    // debugger
+    await API.followUser(this.toggleButton.getAttribute("data-user-id"));
   }
 
   async unfollow() {
     // Your code here
+    // debugger
+    await API.unfollowUser(this.toggleButton.getAttribute("data-user-id"));
   }
 
   render() {
     switch (this.followState) {
       // Your code here
+      case 'Follow!':
+
+        break;
+      case 'Unfollow!':
+
+        break;
+      default:
+        console.log("error: no follow state");
+        break;
     }
   }
 
